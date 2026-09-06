@@ -1,0 +1,386 @@
+/* Ported 1:1 from the original Streamlit app's <style> block in main.py,
+   so the look and feel of the MERN app matches the Python version exactly. */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(125deg, #191326, #30205a, #4c244f, #203b4a);
+  background-size: 300% 300%;
+  color: #f5f6ff;
+  animation: aurora 18s ease infinite;
+  font-family: "DM Sans", sans-serif;
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.block-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.6rem 1rem 3.5rem;
+}
+
+h1, h2, h3 {
+  font-family: "Manrope", sans-serif;
+  letter-spacing: -0.035em;
+  color: #f8f8ff;
+  margin: 0;
+}
+
+p, label {
+  font-family: "DM Sans", sans-serif;
+}
+
+.hero {
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+  padding: 2.15rem 2.35rem;
+  margin-bottom: 2.25rem;
+}
+
+.eyebrow {
+  color: #f6c4f9;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.hero p {
+  color: #e8e3f6;
+  font-size: 1.06rem;
+  max-width: 620px;
+  margin: 0.85rem 0 0;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-family: "Manrope", sans-serif;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.35rem;
+}
+
+.section-copy {
+  color: #c8c5d6;
+  font-size: 0.94rem;
+  margin: 0 0 1.1rem;
+}
+
+.upload-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.upload-row > .upload-col {
+  flex: 4 1 320px;
+}
+
+.upload-row > .action-col {
+  flex: 1 1 160px;
+}
+
+.file-drop {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  padding: 0.45rem 0.7rem;
+}
+
+.file-drop label {
+  display: block;
+  font-size: 0.85rem;
+  color: #d0cadd;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.file-drop-zone {
+  border: 1.5px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 11px;
+  background: rgba(17, 16, 29, 0.28);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.file-drop-zone input[type="file"] {
+  color: #e8e3f6;
+  font-size: 0.85rem;
+}
+
+.file-drop-zone .browse-btn {
+  background: #fff;
+  color: #241b35;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button {
+  font-family: "DM Sans", sans-serif;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  min-height: 2.65rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #5b2f8f;
+  color: #fff;
+  box-shadow: 0 9px 22px rgba(55, 22, 100, 0.42);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #452170;
+  transform: translateY(-1px);
+}
+
+.btn-download {
+  background: #fff;
+  color: #241b35;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 13px;
+  background: rgba(18, 18, 29, 0.42);
+  color: #fff;
+  backdrop-filter: blur(18px);
+  font-family: "DM Sans", sans-serif;
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #e98bd5;
+  box-shadow: 0 0 0 3px rgba(233, 139, 213, 0.2);
+}
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  backdrop-filter: blur(18px);
+  border-radius: 14px;
+  padding: 1.05rem 1.2rem;
+}
+
+.metric-label {
+  color: #d0cadd;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.metric-value {
+  font-family: "Manrope", sans-serif;
+  color: #fff;
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-top: 0.2rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  backdrop-filter: blur(18px);
+  border-radius: 15px;
+  padding: 1.2rem 1.25rem;
+  height: 100%;
+}
+
+.result-card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+.result-card p {
+  color: #e0dcea;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  border-radius: 17px;
+  padding: 1.35rem 1.45rem;
+}
+
+.profile-name {
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.profile-contact {
+  color: #ded8eb;
+  font-size: 0.92rem;
+  margin-top: 0.42rem;
+}
+
+.profile-contact span {
+  margin-right: 1rem;
+}
+
+.timeline-item {
+  border-left: 2px solid rgba(239, 140, 211, 0.7);
+  padding: 0.1rem 0 0.9rem 0.9rem;
+  margin-top: 0.7rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.timeline-meta {
+  color: #c8c1d8;
+  font-size: 0.86rem;
+  margin-top: 0.2rem;
+}
+
+.timeline-copy {
+  color: #e4dfec;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-top: 0.35rem;
+}
+
+.skill {
+  display: inline-block;
+  background: rgba(87, 224, 202, 0.17);
+  border: 1px solid rgba(115, 239, 216, 0.21);
+  color: #9df4e4;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin: 0 0.38rem 0.42rem 0;
+  padding: 0.36rem 0.68rem;
+}
+
+.skill.missing {
+  background: rgba(255, 155, 119, 0.16);
+  border-color: rgba(255, 188, 157, 0.22);
+  color: #ffc5ac;
+}
+
+.alert {
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+}
+
+.alert-error {
+  background: rgba(255, 99, 99, 0.16);
+  border: 1px solid rgba(255, 140, 140, 0.35);
+  color: #ffd4d4;
+}
+
+.alert-success {
+  background: rgba(99, 255, 170, 0.14);
+  border: 1px solid rgba(140, 255, 190, 0.32);
+  color: #cdffe4;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+  margin: 2.7rem 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+  .block-container {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+  .hero {
+    padding: 1.65rem 1.35rem;
+  }
+  .metrics-row,
+  .result-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}

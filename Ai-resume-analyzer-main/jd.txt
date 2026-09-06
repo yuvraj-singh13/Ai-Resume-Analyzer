@@ -1,0 +1,18 @@
+Python Developer
+
+Responsibilities:
+- Develop backend APIs using Python.
+- Build REST APIs using FastAPI.
+- Work with SQL databases.
+- Use Git for version control.
+- Experience with Docker is preferred.
+- Knowledge of LangChain and LLMs is a plus.
+
+Required Skills:
+- Python
+- FastAPI
+- SQL
+- Git
+- Docker
+- REST API
+- Problem Solving
